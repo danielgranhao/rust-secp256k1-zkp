@@ -7,6 +7,10 @@
 #ifndef SECP256K1_MODULE_MUSIG_ADAPTOR_IMPL_H
 #define SECP256K1_MODULE_MUSIG_ADAPTOR_IMPL_H
 
+#if defined(__wasm__) || defined(__wasm32__)
+#define memmove __builtin_memmove
+#endif
+
 #include <string.h>
 
 #include "../../../include/secp256k1.h"

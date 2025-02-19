@@ -7,6 +7,10 @@
 #ifndef SECP256K1_HSORT_IMPL_H
 #define SECP256K1_HSORT_IMPL_H
 
+#if defined(__wasm__) || defined(__wasm32__)
+#define memmove __builtin_memmove
+#endif
+
 #include "hsort.h"
 
 /* An array is a heap when, for all non-zero indexes i, the element at index i
